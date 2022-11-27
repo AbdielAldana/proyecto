@@ -59,11 +59,11 @@ function App() {
     tempDue = tempTotal / 2
 
     setTotalItems(tempTotalItems)
-    setTotalM2(tempTotalM2)
-    setSubtotal(numForm.format(tempSubtotal))
-    setTax(numForm.format(tempTax))
-    setTotal(numForm.format(tempTotal))
-    setDue(numForm.format(tempDue))
+    setTotalM2(parseFloat(tempTotalM2).toFixed(2))
+    setSubtotal(tempSubtotal)
+    setTax(tempTax)
+    setTotal(tempTotal)
+    setDue(tempDue)
   },[data, setData])
 
   const alertN = (type, msg) => {
@@ -150,29 +150,29 @@ function App() {
       <div className="summary">
         <h1>Summary</h1>
         <div className="panel">
-          <div className="data">
+        <div className="data">
             <h3 className="dataName">Total Items</h3>
             <h3 className="dataValue">{totalItems}</h3>
           </div>
           <div className="data">
             <h3 className="dataName">Total M<sup>2</sup></h3>
-            <h3 className="dataValue">{totalM2}</h3>
+            <h3 className="dataValue">{parseFloat(totalM2).toFixed(2)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName">Subtotal</h3>
-            <h3 className="dataValue">${subtotal}</h3>
+            <h3 className="dataValue">${numForm.format(subtotal)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName">Tax</h3>
-            <h3 className="dataValue">${tax}</h3>
+            <h3 className="dataValue">${numForm.format(tax)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName"><strong>Total</strong></h3>
-            <h3 className="dataValue"><strong>${total}</strong></h3>
+            <h3 className="dataValue"><strong>${numForm.format(total)}</strong></h3>
           </div>
           <div className="data">
             <h3 className="dataName"><strong>Due Today 50%</strong></h3>
-            <h3 className="dataValue"><strong>${due}</strong></h3>
+            <h3 className="dataValue"><strong>${numForm.format(due)}</strong></h3>
           </div>
         </div>
       </div>
@@ -228,23 +228,23 @@ function App() {
           </div>
           <div className="data">
             <h3 className="dataName">Total M<sup>2</sup></h3>
-            <h3 className="dataValue">{totalM2}</h3>
+            <h3 className="dataValue">{parseFloat(totalM2).toFixed(2)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName">Subtotal</h3>
-            <h3 className="dataValue">${subtotal}</h3>
+            <h3 className="dataValue">${numForm.format(subtotal)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName">Tax</h3>
-            <h3 className="dataValue">${tax}</h3>
+            <h3 className="dataValue">${numForm.format(tax)}</h3>
           </div>
           <div className="data">
             <h3 className="dataName"><strong>Total</strong></h3>
-            <h3 className="dataValue"><strong>${total}</strong></h3>
+            <h3 className="dataValue"><strong>${numForm.format(total)}</strong></h3>
           </div>
           <div className="data">
             <h3 className="dataName"><strong>Due Today 50%</strong></h3>
-            <h3 className="dataValue"><strong>${due}</strong></h3>
+            <h3 className="dataValue"><strong>${numForm.format(due)}</strong></h3>
           </div>
         </div>
       </div>
